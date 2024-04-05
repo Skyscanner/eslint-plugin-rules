@@ -15,9 +15,11 @@
  */
 
 const noAxios = require('./src/rules/no-axios/no-axios');
+const forbidComponentProps = require('./src/rules/forbid-component-props/forbid-component-props');
 
 module.exports = {
   rules: {
     'no-axios': noAxios,
+    'forbid-component-props': forbidComponentProps,
   },
 };
