@@ -61,7 +61,7 @@ A fork of [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-r
 
 #### Rule options
 
-This rule extends the functionality of the upstream rule with new fuctionality. This is exposed via a new property witin the `forbid` object, `allowedForRegex`.
+This rule extends the functionality of the upstream rule with a new property within the `forbid` config object, `allowedForRegex`.
 
 Full api docs for upsteam see: [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md).
 
