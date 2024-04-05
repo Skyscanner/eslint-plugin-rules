@@ -31,7 +31,8 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "@skyscanner/rules/no-axios": "error"
+    "@skyscanner/rules/no-axios": "error",
+    "@skyscanner/rules/forbid-component-props": "error"
   }
 }
 ```
@@ -40,7 +41,7 @@ Then configure the rules you want to use under the rules section.
 
 ### no-axios
 
-Detects code importing `axios`. 
+Detects code importing `axios`.
 
 Axios it prone to sensitive information leaks due to inclusion of headers in errors it throws.
 
@@ -51,4 +52,27 @@ Axios it prone to sensitive information leaks due to inclusion of headers in err
   }
 }
 ```
+
 Where `<severity>` can be one of: `error`, `warn` `off`.
+
+### forbid-component-props
+
+A fork of [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md).
+
+#### Rule options
+
+This rule extends the functionality of the upstream rule with a new property within the `forbid` config object, `allowedForRegex`.
+
+Full api docs for upsteam see: [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md).
+
+##### `forbid.allowedForRegex`
+
+A string specifying a pattern of component names. Components that match this pattern are included in an allow list.
+
+```json
+{
+  "propName": "someProp",
+  "allowedForRegex": "^Special",
+  "message": "Avoid using someProp except on prefixed 'Special' components"
+}
+```
