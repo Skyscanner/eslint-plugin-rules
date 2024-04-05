@@ -15,7 +15,7 @@
  */
 const { RuleTester } = require('eslint');
 
-const rule = require('../../../lib/rules/forbid-component-props');
+const rule = require('./forbid-component-props');
 
 const parserOptions = {
   ecmaVersion: 2018,
