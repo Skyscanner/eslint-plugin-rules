@@ -53,6 +53,7 @@ module.exports = {
       description: 'Disallow certain props on components',
       category: 'Best Practices',
       recommended: false,
+      url: 'https://github.com/Skyscanner/eslint-plugin-rules#forbid-component-props',
     },
 
     messages,
