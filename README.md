@@ -57,7 +57,9 @@ Where `<severity>` can be one of: `error`, `warn` `off`.
 
 ### forbid-component-props
 
-A fork of [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md).
+A fork of [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md). For details on why this is used in Skyscanner repositories, see: [why](src/rules/forbid-component-props/why.md#why-classname-usage-can-cause-specificity-problems).
+
+For alternatives to using `className`, see [guidance](src/rules/forbid-component-props/why.md#guidance).
 
 #### Rule options
 
