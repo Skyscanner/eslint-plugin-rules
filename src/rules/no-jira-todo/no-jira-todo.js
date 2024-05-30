@@ -1,26 +1,18 @@
-/*
-# What is this?
-
-Builds on eslint-plugin-react/forbid-component-props and extends to allow and Allow List to be provided as a regex.
-
-Aside from providing an `allowedForRegex` option the implementation remains the same. A `disallowedForRegex` is not provided as no use case currently exists, so we avoid the extra complexity.
-
-https://github.com/jsx-eslint/eslint-plugin-react/blob/9f4b2b96d92bf61ae61e8fc88c413331efe6f0da/lib/rules/forbid-component-props.js#L2
-
-An issue has been raised with eslint-plugin-react to ask for this feature, if provided we should switch to:
-- https://github.com/jsx-eslint/eslint-plugin-react/issues/3686
-
-
-# Why do we need a custom rule?
-
-We use this linting specifically for linting on className usage. This has been seen to cause specificity problems when working in a code-split app.
-
-Our allowlist for the medium to long term will include Bpk* components, and backpack-component-icon Icons. The former is a static list, which could be maintained in an .eslintrc with minimum toil.
-
-However, when used with the `withDefaultProps` HOC that Backpack provide the names become more dynamic and more toil to maintain. Additionally, and significantly, Icons are also much higher volume, and have dynamic names.
-
-Maintaining a list of components and managing contributors confusion is higher toil than maintaining this custom rule.
-*/
+/**
+ * Copyright 2023-present Skyscanner Limited.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 // ------------------------------------------------------------------------------
 // Rule Definition
@@ -61,8 +53,6 @@ module.exports = {
           `${prefix.source}:\\s(${jiraUrl.source}|\\[\?${ticket.source}\\]\?)(\\s.*)?`,
           'g',
         );
-
-        console.log({ regex });
 
         for (const comment of context.getSourceCode().getAllComments()) {
           const value = comment.value.trimStart();
