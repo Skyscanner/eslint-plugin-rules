@@ -31,21 +31,18 @@ ruleTester.run('no-jira-todo', rule, {
   valid: [
     'const variable = "Non comment"',
     '// TODO: [WALL-1234] description',
+    '// TODO: DINGO-123 description',
     '// TODO: [JIRA-XXXX] fixed',
     '// FIXME: [CASTLE-5678]',
     '// FIXME: [WOM-2468] comment',
     '// @TODO: [WALL-1234] description',
     '// @FIXME: [WALL-1234] description',
     '// TODO: https://skyscanner.atlassian.net/browse/SHIBA-1234 description',
+    '// TODO: https://atlassian-upgrade.net/browse/WALL-1234',
     '// @FIXME: https://skyscanner.atlassian.net/browse/WOODPECKER-1010 description',
     'const regex = new RegExp("expression", "i"); // TODO: [JIRA-4321] comment',
   ],
   invalid: [
-    {
-      code: '// TODO: WALL-1234 description',
-      errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
-    },
     {
       code: '// TODO: please fail',
       errors: [{ messageId: 'todo-error' }],

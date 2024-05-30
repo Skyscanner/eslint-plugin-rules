@@ -27,7 +27,8 @@ Maintaining a list of components and managing contributors confusion is higher t
 // ------------------------------------------------------------------------------
 
 const messages = {
-  'todo-error': 'All TODO comments must have a JIRA ticket',
+  'todo-error':
+    'JIRA ticket numbers must be added to all TODO/FIXME comments (e.g. TODO: DINGO-123)',
 };
 
 const verifyCommentPrefix = (comment) =>
@@ -54,12 +55,14 @@ module.exports = {
         const prefix = new RegExp('@?(TODO|FIXME)');
         const ticket = new RegExp('[A-Z]{2,255}-(\\d|X){2,8}');
         const jiraUrl = new RegExp(
-          `https://skyscanner.atlassian.net/browse/${ticket.source}`,
+          `https://([a-zA-Z0-9.\/-]\+)/${ticket.source}`,
         );
         const regex = new RegExp(
-          `${prefix.source}:\\s(${jiraUrl.source}|\\[${ticket.source}\\])(\\s.*)?`,
+          `${prefix.source}:\\s(${jiraUrl.source}|\\[\?${ticket.source}\\]\?)(\\s.*)?`,
           'g',
         );
+
+        console.log({ regex });
 
         for (const comment of context.getSourceCode().getAllComments()) {
           const value = comment.value.trimStart();
