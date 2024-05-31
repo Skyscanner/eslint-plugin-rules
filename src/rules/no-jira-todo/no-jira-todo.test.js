@@ -41,6 +41,9 @@ ruleTester.run('no-jira-todo', rule, {
     '// TODO: https://atlassian-upgrade.net/browse/WALL-1234',
     '// @FIXME: https://skyscanner.atlassian.net/browse/WOODPECKER-1010 description',
     'const regex = new RegExp("expression", "i"); // TODO: [JIRA-4321] comment',
+    `// TODO: ST-123 first of multiple TODOs
+    const { locale } = context[requestContextParameters.CULTURE];
+    // TODO: DINGO-123 another TODO`,
   ],
   invalid: [
     {

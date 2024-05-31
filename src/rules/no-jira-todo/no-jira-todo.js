@@ -51,7 +51,6 @@ module.exports = {
         );
         const regex = new RegExp(
           `${prefix.source}:\\s(${jiraUrl.source}|\\[\?${ticket.source}\\]\?)(\\s.*)?`,
-          'g',
         );
 
         for (const comment of context.getSourceCode().getAllComments()) {
