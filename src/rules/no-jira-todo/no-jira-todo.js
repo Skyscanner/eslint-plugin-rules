@@ -39,7 +39,6 @@ module.exports = {
     messages,
     type: 'suggestion',
     schema: [],
-    fixable: 'code',
   },
   create(context) {
     return {
