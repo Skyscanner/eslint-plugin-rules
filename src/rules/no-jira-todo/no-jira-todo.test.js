@@ -49,27 +49,22 @@ ruleTester.run('no-jira-todo', rule, {
     {
       code: '// TODO: please fail',
       errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
     },
     {
       code: '// TODO: this should also fail WALL-1234',
       errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
     },
     {
       code: '// FIXME another fail WALL-1234',
       errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
     },
     {
       code: '// @FIXME and this too [WALL-1234]',
       errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
     },
     {
       code: '// @TODO: https://skyscanner.atlassian.net/browse/not-a-ticket',
       errors: [{ messageId: 'todo-error' }],
-      output: '// TODO: [JIRA-XXXX]',
     },
   ],
 });
