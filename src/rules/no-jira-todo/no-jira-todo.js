@@ -39,7 +39,6 @@ module.exports = {
     messages,
     type: 'suggestion',
     schema: [],
-    fixable: 'code',
   },
   create(context) {
     return {
@@ -60,8 +59,6 @@ module.exports = {
             context.report({
               node: comment,
               messageId: 'todo-error',
-              fix: (fixer) =>
-                fixer.replaceText(comment, '// TODO: [JIRA-XXXX]'),
             });
           }
         }

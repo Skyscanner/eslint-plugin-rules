@@ -32,9 +32,3 @@ Examples of invalid comments:
 // @FIXME description of the change needed WALL-1234
 // @TODO: https://skyscanner.atlassian.net/browse/not-a-ticket
 ```
-
-If an invalid `TODO` comment is recognised, there is a auto fix available to update the comment to the format. This should be updated with the ticket and description. This is provided in the format:
-
-```tsx
-// TODO: [JIRA-XXX]
-```
