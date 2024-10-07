@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Skyscanner/eslint-plugin-rules#readme",
   "devDependencies": {
-    "eslint": "^8.56.0",
+    "eslint": "^9.12.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.4",
     "jest": "^29.7.0",
