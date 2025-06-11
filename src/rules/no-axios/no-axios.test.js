@@ -114,14 +114,5 @@ ruleTester.run('no-axios', noAxios, {
         },
       ],
     },
-
-    // {
-    //   code: 'import("axios").then(() => console.log("foo"));',
-    //   errors: [
-    //     {
-    //       message: 'Deprecated import of axios package',
-    //     },
-    //   ],
-    // },
   ],
 });
