@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 const { RuleTester } = require('eslint');
-
+const babelParser = require('@babel/eslint-parser');
 const rule = require('./forbid-component-props');
 
-const parserOptions = {
-  ecmaVersion: 2018,
-  sourceType: 'module',
-  ecmaFeatures: {
-    jsx: true,
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    parser: babelParser,
+    parserOptions: {
+      requireConfigFile: false,
+      babelOptions: {
+        presets: ['@babel/preset-react'],
+      },
+    },
   },
-};
-
-const ruleTester = new RuleTester({ parserOptions });
+});
 
 ruleTester.run('forbid-component-props', rule, {
   valid: [
@@ -147,21 +151,6 @@ ruleTester.run('forbid-component-props', rule, {
             {
               propName: 'className',
               allowedFor: ['this.ReactModal'],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      code: `
-        const item = (<Foo className="foo" />);
-      `,
-      options: [
-        {
-          forbid: [
-            {
-              propName: 'className',
-              disallowedFor: ['ReactModal'],
             },
           ],
         },

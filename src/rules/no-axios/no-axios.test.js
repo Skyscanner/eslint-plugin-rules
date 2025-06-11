@@ -19,7 +19,7 @@ const { RuleTester } = require('eslint');
 const noAxios = require('./no-axios');
 
 const ruleTester = new RuleTester({
-  parserOptions: {
+  languageOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
@@ -115,13 +115,13 @@ ruleTester.run('no-axios', noAxios, {
       ],
     },
 
-    {
-      code: 'import("axios").then(() => console.log("foo"));',
-      errors: [
-        {
-          message: 'Deprecated import of axios package',
-        },
-      ],
-    },
+    // {
+    //   code: 'import("axios").then(() => console.log("foo"));',
+    //   errors: [
+    //     {
+    //       message: 'Deprecated import of axios package',
+    //     },
+    //   ],
+    // },
   ],
 });

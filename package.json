@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/Skyscanner/eslint-plugin-rules#readme",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.27.5",
+    "@babel/preset-react": "^7.27.1",
     "eslint": "^9.28.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.4",

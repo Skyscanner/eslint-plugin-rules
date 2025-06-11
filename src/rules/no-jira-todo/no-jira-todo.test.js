@@ -17,15 +17,12 @@ const { RuleTester } = require('eslint');
 
 const rule = require('./no-jira-todo');
 
-const parserOptions = {
-  ecmaVersion: 2018,
-  sourceType: 'module',
-  ecmaFeatures: {
-    jsx: true,
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
-};
-
-const ruleTester = new RuleTester({ parserOptions });
+});
 
 ruleTester.run('no-jira-todo', rule, {
   valid: [
