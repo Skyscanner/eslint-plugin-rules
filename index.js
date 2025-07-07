@@ -15,12 +15,14 @@
  */
 
 const noAxios = require('./src/rules/no-axios/no-axios');
+const noEnum = require('./src/rules/no-enum/no-enum');
 const forbidComponentProps = require('./src/rules/forbid-component-props/forbid-component-props');
 const noJiraTodo = require('./src/rules/no-jira-todo/no-jira-todo');
 
 module.exports = {
   rules: {
     'no-axios': noAxios,
+    'no-enum': noEnum,
     'forbid-component-props': forbidComponentProps,
     'no-jira-todo': noJiraTodo,
   },

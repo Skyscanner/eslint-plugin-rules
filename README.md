@@ -55,6 +55,22 @@ Axios it prone to sensitive information leaks due to inclusion of headers in err
 
 Where `<severity>` can be one of: `error`, `warn` `off`.
 
+### no-enum
+
+A fork of the unmaintained [eslint-plugin-typescript-enum](https://github.com/shian15810/eslint-plugin-typescript-enum).
+
+Detects code using a TypeScript `enum`.
+
+Alternatives such as `as const` are a preferred option over non-native language features.
+
+```json
+{
+  "rules": {
+    "@skyscanner/rules/no-enum": "<severity>"
+  }
+}
+```
+
 ### forbid-component-props
 
 A fork of [forbid-component-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md). For details on why this is used in Skyscanner repositories, see: [why](src/rules/forbid-component-props/README.md#why-classname-usage-can-cause-specificity-problems).
