@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Skyscanner/eslint-plugin-rules#readme",
   "devDependencies": {
-    "@typescript-eslint/rule-tester": "^8.35.1",
+    "@typescript-eslint/rule-tester": "^8.38.0",
     "@typescript-eslint/utils": "^8.35.1",
     "eslint": "^8.56.0",
     "eslint-plugin-prettier": "^5.2.1",
