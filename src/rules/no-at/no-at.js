@@ -14,18 +14,31 @@
  * limitations under the License.
  */
 
-const noAxios = require('./src/rules/no-axios/no-axios');
-const noEnum = require('./src/rules/no-enum/no-enum');
-const forbidComponentProps = require('./src/rules/forbid-component-props/forbid-component-props');
-const noJiraTodo = require('./src/rules/no-jira-todo/no-jira-todo');
-const noAt = require('./src/rules/no-at/no-at');
-
 module.exports = {
-  rules: {
-    'no-axios': noAxios,
-    'no-enum': noEnum,
-    'forbid-component-props': forbidComponentProps,
-    'no-jira-todo': noJiraTodo,
-    'no-at': noAt,
+  create: (context) => ({
+    CallExpression: (node) => {
+      const callee = node.callee;
+      if (
+        callee.type === 'MemberExpression' &&
+        !callee.computed &&
+        callee.property &&
+        callee.property.name === 'at'
+      ) {
+        context.report({
+          node: callee.property,
+          messageId: 'disallow',
+        });
+      }
+    },
+  }),
+  meta: {
+    docs: {
+      description:
+        'Disallow usage of `.at()` due to Safari <15.4 incompatibility',
+    },
+    messages: {
+      disallow:
+        'Usage of ".at()" is not supported in Safari <15.4. Use bracket indexing instead.',
+    },
   },
 };
