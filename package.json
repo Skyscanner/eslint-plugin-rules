@@ -29,7 +29,7 @@
   "homepage": "https://github.com/Skyscanner/eslint-plugin-rules#readme",
   "devDependencies": {
     "@typescript-eslint/rule-tester": "^8.35.1",
-    "@typescript-eslint/utils": "^8.35.1",
+    "@typescript-eslint/utils": "^8.44.0",
     "eslint": "^8.56.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.4",
