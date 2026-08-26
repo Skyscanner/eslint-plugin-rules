@@ -1,0 +1,11 @@
+---
+version: '1'
+type: library
+component:
+  name: eslint-plugin-rules
+  owner: beetlejuice
+  description: ESLint plugin containing Skyscanner's public custom lint rules.
+  personalDataHandling: none
+  soxScope: False
+  paymentProcessing: False
+  serviceClass: economy-class
